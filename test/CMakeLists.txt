@@ -38,3 +38,11 @@ target_link_libraries(${target_name} gtest gtest_main)
 # Add tests
 include(GoogleTest)
 gtest_discover_tests(${target_name})
+
+# Enable coverage
+option(ENABLE_COVERAGE "Enable coverage reporting" ON)
+if(DEFINED ENV{CODECOV_TOKEN} OR ENABLE_COVERAGE)
+    message(STATUS "Building ${target_name} with coverage enabled!")
+    target_compile_options(${target_name} PRIVATE --coverage)
+    target_link_options(${target_name} PRIVATE --coverage)
+endif()
