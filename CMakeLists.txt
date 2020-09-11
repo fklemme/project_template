@@ -11,5 +11,5 @@ project(magic)
 add_subdirectory(main)
 
 # --- Setup Tests ---
-include(CTest)
+enable_testing()
 add_subdirectory(test)

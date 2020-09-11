@@ -22,4 +22,4 @@ target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..
 # For Visual Studio filters
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/../include PREFIX "Header Files" FILES ${hdr})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/../source PREFIX "Source Files" FILES ${src})
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "${target_name}" FILES ${local})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Main File" FILES ${local})
