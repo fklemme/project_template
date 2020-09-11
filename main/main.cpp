@@ -1,5 +1,6 @@
-#include "Magic.hpp"
 #include <iostream>
+
+#include "Magic.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char** argv) {
     Magic magic;

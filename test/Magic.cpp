@@ -1,5 +1,6 @@
-#include <gtest/gtest.h>
 #include "Magic.hpp"
+
+#include <gtest/gtest.h>
 
 TEST(Magic, get) {
     Magic magic;

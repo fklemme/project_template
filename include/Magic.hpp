@@ -1,6 +1,6 @@
 #pragma once
 
 class Magic {
-    public:
+  public:
     int get() const;
 };
