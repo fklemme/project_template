@@ -39,8 +39,8 @@ target_link_libraries(${target_name} gtest gtest_main)
 include(GoogleTest)
 gtest_discover_tests(${target_name})
 
-# Enable coverage
-option(ENABLE_COVERAGE "Enable coverage reporting" ON)
+# Enable coverage (only works for gcc / clang)
+option(ENABLE_COVERAGE "Enable coverage reporting" OFF)
 if(ENABLE_COVERAGE AND CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Building ${target_name} with coverage enabled!")
     target_compile_options(${target_name} PRIVATE --coverage)
