@@ -28,4 +28,4 @@ jobs:
       - name: Run CTest
         run: cd build && ctest
 
-      # (No coverage upload here)
+      # (No coverage upload here, only for Linux)

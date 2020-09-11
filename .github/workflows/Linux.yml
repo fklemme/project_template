@@ -22,7 +22,7 @@ jobs:
 
       - name: CMake build
         run: |
-          cmake -S . -B build
+          cmake -S . -B build -D ENABLE_COVERAGE=ON
           cmake --build build
           
       - name: Run CTest
