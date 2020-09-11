@@ -24,14 +24,20 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/../include PREFIX "Header Files" F
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/../source PREFIX "Source Files" FILES ${src})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "${target_name}" FILES ${local})
 
-# Get GoogleTest
+# Configure Google Test
+set(BUILD_GMOCK OFF CACHE BOOL "Build Gmock") # We don't need Gmock atm.
+if(MSVC)
+    # Windows uses shared run-time by default. Also use it in Google Test.
+    set(gtest_force_shared_crt ON CACHE BOOL "Use shared (DLL) run-time lib")
+endif()
+
+# Get Google Test
 include(FetchContent)
 FetchContent_Declare(
     googletest
     GIT_REPOSITORY  https://github.com/google/googletest.git
     GIT_TAG         release-1.10.0
 )
-set(BUILD_GMOCK OFF CACHE BOOL "Build Gmock") # Don't need it atm.
 FetchContent_MakeAvailable(googletest)
 target_link_libraries(${target_name} gtest gtest_main)
 
