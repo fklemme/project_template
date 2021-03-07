@@ -5,7 +5,7 @@ build:
   before_script:
     - export DEBIAN_FRONTEND=noninteractive
     - apt-get update
-    - apt-get install -y cmake make g++
+    - apt-get install -y cmake git make g++
   script:
     - cmake -S . -B build
     - cmake --build build
@@ -15,7 +15,7 @@ test:
   before_script:
     - export DEBIAN_FRONTEND=noninteractive
     - apt-get update
-    - apt-get install -y cmake make g++ gcovr
+    - apt-get install -y cmake git make g++ gcovr
   script:
     - cmake -S . -B build -D ENABLE_COVERAGE=ON
     - cmake --build build
