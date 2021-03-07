@@ -1,3 +1,0 @@
-ignore:
-  - "main/" # main function is not tested
-  - "test/" # tests need no coverage report
