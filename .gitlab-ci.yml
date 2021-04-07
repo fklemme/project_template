@@ -20,8 +20,11 @@ test:
     - cmake -S . -B build -D ENABLE_COVERAGE=ON
     - cmake --build build
     - (cd build && ctest)
-    - gcovr --xml-pretty --exclude-unreachable-branches --print-summary -o coverage.xml --exclude build/_deps/
+    - gcovr --root . --exclude test/ --exclude build/_deps/ --xml-pretty -o coverage.xml --print-summary
+    - gcovr --root . --exclude test/ --exclude build/_deps/ --html-details -o coverage.html
   coverage: /^\s*lines:\s*\d+.\d+\%/
   artifacts:
     reports:
       cobertura: coverage.xml
+    paths:
+      - coverage.*.html
