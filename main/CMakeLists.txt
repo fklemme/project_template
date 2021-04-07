@@ -7,7 +7,7 @@ set_property(TARGET ${target_name} PROPERTY CXX_STANDARD 17)
 
 # Enable more warnings
 if(MSVC)
-    target_compile_options(${target_name} PRIVATE /W4)
+    #target_compile_options(${target_name} PRIVATE /W4) # commented to reduce noise in output window
 else()
     target_compile_options(${target_name} PRIVATE -Wall -Wextra -pedantic)
 endif()
